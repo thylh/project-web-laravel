@@ -1,0 +1,130 @@
+footer {
+    /* background-image: url('../images/pic/4920290.jpg'); */
+    background-image: url('/images/pic/4920290.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 100px;
+}
+
+.footer1 {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d2c9b8;
+}.logo_ft {
+    height: 70px;
+    width: 100px;
+    position: relative;
+    left:2px;
+    display: block;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+.footer1 > div > img {
+    position:relative;
+    left:10px;
+    width:100px;
+    height: 100%;
+    top:3px;
+    
+}
+
+.method {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center; /* Canh giữa nếu muốn */
+    margin-top: 20px;
+}
+
+.method1, .method2 {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Viền trong suốt */
+    background-clip: padding-box;
+    padding: 8px 14px; /* Đệm lớn hơn để nút đẹp hơn */
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng đẹp */
+    transition: transform 0.2s, box-shadow 0.2s; /* Hiệu ứng hover */
+}
+
+.method1:hover, .method2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.method1 img, .method2 img {
+    width: 24px; /* Icon đẹp */
+    height: 24px;
+}
+
+.method1 > a {
+    color: #ff1717;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.method2 > a {
+    color: #0b2cc0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.footer2 {
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #d2c9b8;
+    padding: 30px 0;
+}
+
+.box1, .box2, .box3 {
+    padding: 20px;
+}
+
+.box1 > h3, .box2 > h3, .box3 > h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2c9b8;
+    color: #f9b221;
+}
+
+.box1 > ul > li > a, .box2 > ul > li > a, .box3 > ul > li > a {
+    color: #0b2cc0;
+    text-decoration: none;
+}
+
+.box1 > ul > li , .box2 > ul > li , .box3 > ul > li {
+    padding-bottom:10px;
+
+}
+.box1 ul li :hover,.box2 ul li :hover,.box3 ul li :hover{
+    color:orange;
+}
+
+.footer3 {
+    height: 60px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}.footer3 p {
+    padding-top:10px;
+    color:rgb(63, 65, 63);
+    font-size: smaller;
+    padding-left:10px;
+    padding-right:10px;
+}
+

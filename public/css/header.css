@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+a{
+    text-decoration: none;
+}
+ul > li{
+    list-style: none;
+}
+
+.navbar{
+    background-color: #fff;
+    height: auto;
+}
+
+.navbar1{
+    background-color: #fff;
+    height: 50px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    color: #0b2cc0;
+}
+.hotline{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+.hotline > i{
+    color: #88eef1;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #f0f8ff;
+}
+.hotline:hover a {
+    color:red !important;
+}
+
+.login {
+    text-align: center;
+    margin: 7px;
+    padding: 7px;
+    background-color: #b6f1cf;
+    border-radius: 20px;
+    position: relative;
+    right: -5px;
+}
+.login > ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.login > ul > li {
+    font-weight: bold;
+    color: #0b2cc0;
+    position: relative;
+}
+.login > ul > li > a {
+    padding: 0px 10px;
+    color: #0b2cc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login > ul > li > a:hover {
+    color: #ff1717;
+}
+
+/* Dropdown button */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: #0b2cc0;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 95%;
+    left: 100px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 5px 0;
+    font-size: small;
+}
+
+.dropdown-menu a,
+.dropdown-menu form button,
+.dropdown-menu button {
+    display: block;
+    padding: 10px 15px;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font: inherit;
+    color: #0b2cc0;
+    cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu form button:hover,
+.dropdown-menu button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Hiện dropdown khi hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.navbar2{
+    /* background-color: aqua; */
+    height: 80px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    z-index: 10;
+    position: relative;
+}
+img.logo{
+    
+    height: 100%;
+    object-fit: contain;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.menu > li > a{
+    color: #0b2cc0;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu > li > a:hover{
+    color: #f9b221;
+}
+
+ul.menu > li{
+    position: relative;
+}
+ul.dropmenu1{
+    position: absolute;
+    background-color: #fff;
+    text-align: center;
+    top: 100%;
+    width: 120px;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+ul.dropmenu1 > li{
+    padding: 9px;
+    border-bottom: 1px solid #57758f;
+}
+ul.dropmenu1 > li:last-child{
+    border-bottom: none;
+}
+ul.dropmenu1 > li > a{
+    color: #0b2cc0;
+}
+ul.menu > li:hover > ul.dropmenu1 {
+    display: block;
+}
+ul.dropmenu1 > li > a:hover{
+    color: #f9b221;
+}
+
+li.search-box{
+    position: relative;
+}
+/* li.search-box:hover{
+    display: block;
+} */
+ul.dropmenu2 {
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    gap: 10px;
+    width: 215px;
+    padding: 0px 8px;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    z-index: 1000;
+    flex-direction: row;
+    align-items: center;
+}
+ul.dropmenu2 > li > input{
+    border: none;
+    padding: 8px;
+    outline: none;
+}
+ul.dropmenu2 > li > a > i{
+    padding: 10px;
+    color: #fff;
+    background-color: #0b2cc0;
+    cursor: pointer;
+}
+ul.dropmenu2 > li{
+    display: block;
+}
+ul.dropmenu2 > li > button > i {
+    padding: 10px;
+    color: #fff;
+    background-color: #0b2cc0;
+    cursor: pointer;
+}
+ul.dropmenu2 > li > button {
+    border: none;
+    background: none;
+}
+li.search-box.active > form > ul.dropmenu2 {
+    display: flex;
+}

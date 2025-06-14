@@ -1,0 +1,245 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f9ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 40px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #000;
+}
+
+.coin {
+    color: gold;
+}
+
+.steps {
+    margin: 20px auto;
+}
+
+.step {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background: #eee;
+    color: #333;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.step.active {
+    background: #00bfff;
+    color: #fff;
+}
+
+.drop-area {
+    margin-top: 30px;
+    border: 2px dashed #00bfff;
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.drop-area button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.drop-area:hover {
+    background: #e0f7ff;
+}
+
+.info-link {
+    margin-top: 30px;
+}
+
+.info-link a {
+    text-decoration: none;
+    color: #00bfff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.good {
+    background-color: #e6fff0;
+    padding: 10px;
+    border-left: 5px solid #00cc66;
+    margin-bottom: 20px;
+}
+
+.bad {
+    background-color: #ffeaea;
+    padding: 10px;
+    border-left: 5px solid #ff3333;
+}
+
+.good h3, .bad h3 {
+    margin-top: 0;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkbox-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+button[type="submit"] {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #00bfff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0099cc;
+}
+
+button[type="button"] {
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #00bfff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button[type="button"]:hover {
+    background-color: #0099cc;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: #333;
+}
+.step {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background: #eee;
+    color: #333;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+}
+
+.step.active {
+    background: #00bfff;
+    color: #fff;
+}
+
+.step.done {
+    background: #00cc66;
+    color: #fff;
+    font-size: 0;
+}
+
+.step.done::after {
+    content: '✓';
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.success {
+    background: #d4edda;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 60%;
+    color: #155724;
+}

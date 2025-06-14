@@ -1,0 +1,451 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+ul > li{
+    list-style: none;
+}
+
+.navbar{
+    background-color: #fff;
+    height: auto;
+}
+
+.navbar1{
+    background-color: #fff;
+    height: 40px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    color: #0b2cc0;
+}
+.hotline{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+.hotline > i{
+    color: #0b2cc0;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: #f0f8ff;
+}
+/* đoạn này là avt sau đăng nhập nè */
+.user-navbar {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Để dropdown xuống dưới */
+    align-items: flex-start;
+    gap: 5px;
+    cursor: pointer;
+}
+.user-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar-mini {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 8px 0;
+    min-width: 160px;
+    z-index: 1000;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+}
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+.login{
+    text-align: center;
+    background-color: #fffb24;
+    margin: 7px ;
+    padding: 2px;
+    border-radius: 20px;
+}
+.login > ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.login > ul > li {
+    font-weight: bold;
+    color: #0b2cc0;
+}
+.login > ul > li > a{
+    padding: 0px 10px;
+    color: #0b2cc0;
+    font-weight: bold;
+}
+.login > ul > li > a:hover{
+    color: #ff1717;
+}
+
+
+.navbar2{
+    /* background-color: aqua; */
+    height: 60px;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    z-index: 10;
+    position: relative;
+}
+img.logo{
+    height: 100%;
+    object-fit: contain;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+.menu > li > a{
+    color: #0b2cc0;
+    position: relative;
+    text-transform: uppercase;
+}
+.menu > li > a:hover{
+    color: #f9b221;
+}
+
+ul.menu > li{
+    position: relative;
+}
+ul.dropmenu1{
+    position: absolute;
+    background-color: #fff;
+    text-align: center;
+    top: 100%;
+    width: 120px;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+}
+
+ul.dropmenu1 > li{
+    padding: 9px;
+    border-bottom: 1px solid #57758f;
+}
+ul.dropmenu1 > li:last-child{
+    border-bottom: none;
+}
+ul.dropmenu1 > li > a{
+    color: #0b2cc0;
+}
+ul.menu > li:hover > ul.dropmenu1 {
+    display: block;
+}
+ul.dropmenu1 > li > a:hover{
+    color: #f9b221;
+}
+
+li.search-box{
+    position: relative;
+}
+/* li.search-box:hover{
+    display: block;
+} */
+ul.dropmenu2 {
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    gap: 10px;
+    width: 215px;
+    padding: 0px 8px;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+    z-index: 1000;
+    flex-direction: row;
+    align-items: center;
+}
+ul.dropmenu2 > li > a > input{
+    border: none;
+    padding: 8px;
+    outline: none;
+}
+ul.dropmenu2 > li > a > i{
+    padding: 10px;
+    color: #fff;
+    background-color: #0b2cc0;
+    cursor: pointer;
+}
+ul.dropmenu2 > li{
+    display: block;
+}
+li.search-box.active > ul.dropmenu2 {
+    display: flex;
+}
+
+
+
+
+
+main{
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center ;
+    gap: 50px;
+}
+.sidebar{
+    border-radius: 20px;
+    border: 1px solid #dad129b5;
+    padding: 20px;
+    height: fit-content;
+}
+.profile1{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dad129b5;
+}
+
+.avatar-box{
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid #57758f;
+}
+.status-dot {
+  position: absolute;
+  top: 4px;   /* chỉnh vị trí dot */
+  right: 6px;
+  width: 14px;
+  height: 14px;
+  background-color: #00cc00;  
+  border: 2px solid white;    
+  border-radius: 50%;
+}
+.highlight {
+    color: #0b2c;
+}
+
+.profile2{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.next{
+    color: #0b2c;
+}
+
+
+.container{
+    border-radius: 20px;
+    border: 1px solid #dad129b5;
+    padding: 20px;
+}
+.container > h2{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dad129b5;
+    color: #f9b221;
+}
+.info p {
+    display: flex;
+    align-items: flex-start;
+    margin: 8px 0;
+}
+.label {
+    width: 230px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.value {
+    flex: 1;
+}
+.footer-notes {
+    font-size: 14px;
+    color: #f9b221;
+    margin: 15px 0px;
+}
+.change{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 10px;
+}
+.change > button{
+    padding: 5px;
+    border: none;
+    background-color: #57758f;
+    color: #f0f0f0;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.change > button:hover{
+    background-color: #0b2cc0;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/* .container {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+.sidebar {
+    width: 30%;
+    background-color: white;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+.info p {
+    margin: 8px 0;
+}
+.footer-notes {
+    font-size: 14px;
+    color: #555;
+}
+.change-avatar, .change-password, .vip-history {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+
+footer{
+    /* background-color: #453f78; */
+    background-image: url('pic/4920290.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0px 100px;
+    /* height: 500px; */
+}
+
+.footer1{
+    /* background-color: #fff; */
+    /* backdrop-filter: blur(15px); */
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d2c9b8;
+}
+.footer1 > div > img{
+    height: 100%;
+    object-fit: contain;
+}
+
+.method{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.method1, .method2{
+    background-color: #fff;
+    padding: 7px 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(75, 62, 39, 0.3);
+}
+.method2 > a{
+    color: #0b2cc0;
+    font-weight: bold;
+}
+.method1 > a{
+    color: #ff1717;
+    font-weight: bold;
+}
+
+.footer2{
+    backdrop-filter: blur(15px);
+    /* height: 250px; */
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #d2c9b8;
+}
+
+.box1, .box2, .box3{
+    padding: 30px;
+}
+.box1 > h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2c9b8;
+    color: #f9b221;
+}
+.box1 > ul > li > a{
+    color: #0b2cc0;
+}
+
+.box2 > h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2c9b8;
+    color: #f9b221;
+}
+.box2 > ul > li > a{
+    color: #0b2cc0;
+}
+
+.box3 > h3{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d2c9b8;
+    color: #f9b221;
+}
+.box3 > ul > li > a{
+    color: #0b2cc0;
+}

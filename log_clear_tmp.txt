@@ -1,0 +1,45 @@
+=== Dọn file tạm lúc 2025-06-13 07:30:41 ===
+File: 684b2a46768ec.pdf, tuổi: -722.5976322 phút
+File: 684b2a705aeca.pdf, tuổi: -721.8976322 phút
+File: 684b2ae453ee6.jpg, tuổi: -719.96429886667 phút
+File: 684b2b8c57d66.png, tuổi: -717.16429886667 phút
+File: 684b2c1883fea.jpg, tuổi: -714.83096553333 phút
+Tổng cộng đã xóa: 0 file.
+
+=== Dọn file tạm lúc 2025-06-13 07:31:41 ===
+File: 684b2a46768ec.pdf, tuổi: -723.58507763333 phút
+File: 684b2a705aeca.pdf, tuổi: -722.88507763333 phút
+File: 684b2ae453ee6.jpg, tuổi: -720.9517443 phút
+File: 684b2b8c57d66.png, tuổi: -718.1517443 phút
+File: 684b2c1883fea.jpg, tuổi: -715.81841096667 phút
+Tổng cộng đã xóa: 0 file.
+
+=== Dọn file tạm lúc 2025-06-13 07:34:50 ===
+File: 684b2a46768ec.pdf, tuổi: -726.73959276667 phút
+File: 684b2a705aeca.pdf, tuổi: -726.03959276667 phút
+File: 684b2ae453ee6.jpg, tuổi: -724.10625943333 phút
+File: 684b2b8c57d66.png, tuổi: -721.30625943333 phút
+File: 684b2c1883fea.jpg, tuổi: -718.9729261 phút
+Tổng cộng đã xóa: 0 file.
+
+=== Dọn file tạm lúc 2025-06-13 07:37:59 ===
+File: 684b2a46768ec.pdf, modified_at: 2025-06-12 19:28:06, tuổi: 729.88533198333 phút
+--> Đã xóa: 684b2a46768ec.pdf
+File: 684b2a705aeca.pdf, modified_at: 2025-06-12 19:28:48, tuổi: 729.18533198333 phút
+--> Đã xóa: 684b2a705aeca.pdf
+File: 684b2ae453ee6.jpg, modified_at: 2025-06-12 19:30:44, tuổi: 727.25199865 phút
+--> Đã xóa: 684b2ae453ee6.jpg
+File: 684b2b8c57d66.png, modified_at: 2025-06-12 19:33:32, tuổi: 724.45199865 phút
+--> Đã xóa: 684b2b8c57d66.png
+File: 684b2c1883fea.jpg, modified_at: 2025-06-12 19:35:52, tuổi: 722.11866531667 phút
+--> Đã xóa: 684b2c1883fea.jpg
+Tổng cộng đã xóa: 5 file.
+
+=== Dọn file tạm lúc 2025-06-13 07:42:46 ===
+Tổng cộng đã xóa: 0 file.
+
+=== Dọn file tạm lúc 2025-06-14 15:23:00 ===
+File: 684c09d759e12.jpg, modified_at: 2025-06-13 11:21:59, tuổi: 1681.02250205 phút
+--> Đã xóa: 684c09d759e12.jpg
+Tổng cộng đã xóa: 1 file.
+

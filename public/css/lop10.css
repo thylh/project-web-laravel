@@ -1,0 +1,57 @@
+.lop10{
+    background-image: url('/images/l10/bgr-class.jpg');
+
+    width: 100%;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}.lop10_1{
+}.lop10_1 h1 a {
+    
+    color: blue;
+    text-decoration: none; /* Xóa gạch chân */
+}
+
+.lop10_1 h1 a:hover {
+    color: rgb(252, 175, 23);
+}.lop10_1 img{
+    margin-left: 110px;
+    margin-top: 40px;
+    height: 150px;
+    width:215px;
+    border-radius: 10px;
+}.lythuyet:hover{
+    color: rgb(252, 175, 23);
+}.lythuyet{
+    color: blue;
+}img.glow {
+    width: 100%;
+    height: 330px;
+    display: block;
+    transition: box-shadow 0.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(215,244,255);
+}
+
+img.glow:hover {
+    box-shadow: 0 0 30px rgba(215,244,255), 0 0 60px rgba(0, 229, 255, 0.7);
+}.lop10_2{
+    padding-left: 20px;
+     padding-top: 110px;
+     margin-top: 110px;
+}iframe {
+  border: 5px solid #4CAF50; /* bo viền xanh lá dày 5px */
+  border-radius: 10px; /* bo tròn góc 10px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* đổ bóng cho đẹp (tùy chọn) */
+}.b2-truoc,.b1-sau {
+    text-decoration: none; 
+    border: 2px solid grey; 
+    padding: 8px 10px; 
+    border-radius: 20px;
+    color: grey;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.b2-truoc:hover,.b1-sau:hover {
+    background-color: grey;
+    color: aliceblue;
+}
