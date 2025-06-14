@@ -1,61 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📚 Dự án Chia sẻ Tài liệu Học tập - Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Đây là một ứng dụng web được xây dựng bằng **Laravel**, nhằm hỗ trợ sinh viên và giảng viên đăng tải, tìm kiếm và chia sẻ tài liệu học tập dễ dàng. Hệ thống phân quyền người dùng rõ ràng với chức năng duyệt tài liệu trước khi công khai.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🧰 Công nghệ và Thư viện
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Laravel 10+** – framework PHP mạnh mẽ
+- **PHP 8.1+**
+- **MySQL/phpMyAdmin** – hệ quản trị cơ sở dữ liệu
+- **Blade** – template engine
+- **Composer** – quản lý thư viện PHP
+- **Bootstrap/Tailwind** – giao diện frontend
+- **Laravel Auth** – hệ thống đăng nhập & phân quyền
+- **Storage** – quản lý tệp tài liệu
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🚀 Tính năng
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Chức năng người dùng:
+- Đăng ký / Đăng nhập / Đổi mật khẩu
+- Gửi tài liệu theo quy trình 3 bước
+- Xem, tìm kiếm, tải về tài liệu đã được duyệt
+- Quản lý thông tin cá nhân
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Chức năng quản trị (Admin):
+- Duyệt, từ chối tài liệu
+- Quản lý người dùng (cấm, xóa, phân quyền)
+- Thống kê số lượng tài liệu và người dùng
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Chức năng đặc biệt:
+- Tìm kiếm theo từ khóa
+- Hiển thị tài liệu PDF ngay trong trình duyệt
+- Tải lên tệp `.pdf`, `.docx`, `.zip`...
+- Xử lý file tạm, tự động xóa sau thời gian nhất định
+- Tìm kiếm tài liệu theo tiêu đề/mô tả
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 📘 Mô tả chi tiết
 
-### Premium Partners
+### 🔐 Đăng nhập & Đăng ký
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- Truy cập `/dangnhap` để đăng nhập
+- Truy cập `/dangky` để tạo tài khoản mới
 
-## Contributing
+**Tài khoản mẫu:**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Admin: `admin@example.com` / `admin123`
+- User: Đăng ký mặc định
+> Lưu ý: Admin có quyền duyệt/xóa tài liệu. Người dùng chỉ được gửi tài liệu.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🏠 Trang chủ
 
-## Security Vulnerabilities
+- Hiển thị, mô tả chung về web
+- Cam kết, mục tiêu hướng tới
+- Recommend của user
+- Cho phép:
+  - Tìm kiếm tài liệu theo tiêu đề, mô tả
+  - Xem lý thuyết theo phân lớp
+  - Nhấn để xem list tài liệu
+  - Tải về nếu có quyền
+- Nếu người dùng chưa đăng nhập, popup hoặc điều hướng sẽ yêu cầu đăng nhập khi thao tác như tải file.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+### 📄 Trang chi tiết tài liệu
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Hiển thị nội dung tóm tắt: tiêu đề, mô tả, ngày gửi, người gửi, số lượt xem & download
+- Hỗ trợ định dạng file PDF, zip, png, jpg → có thể xem trực tiếp trên trình duyệt <Các định dạng khác có thể tải về để xem>
+- Nút tải về tài liệu (nếu đã được duyệt)
+
+---
+
+### 📤 Gửi tài liệu (User)
+
+- Truy cập mục `Đăng tài liệu` sau khi đăng nhập
+- Gửi qua **3 bước**:
+  1. Duyệt file
+  2. Chọn loại tài liệu & chuyên ngành & mô tả
+  3. Tải lên file
+- Sau khi gửi, tài liệu chờ admin duyệt
+
+---
+
+### 👤 Trang cá nhân
+
+- Hiển thị thông tin người dùng
+- Cho phép cập nhật:
+  - Họ tên
+  - Email
+  - Số tài liệu đã đăng (đã duyệt)
+  - Số ngày tham gia web
+
+---
+
+### 🛠️ Trang quản trị (Admin)
+
+- Truy cập `/admin/dashboard` (sau khi đăng nhập với vai trò `admin`) hoặc đăng nhập với vai trò admin -> tự opentab sang `/admin/dashboard`
+- Chức năng chính:
+  - Duyệt, từ chối tài liệu người dùng gửi
+  - Xem chi tiết từng tài liệu
+  - Xem và quản lý danh sách người dùng
+  - Thống kê số lượng tài liệu, lượt tải
+
+---
+
+## 🗂️ Cấu trúc thư mục chính
+
+```plaintext
+project-web-laravel/
+├── routes/
+│   └── web.php                  # Định tuyến web chính
+├── app/
+│   └── Http/
+│       └── Controllers/         # Controllers người dùng và admin
+├── resources/
+│   └── views/                   # Giao diện Blade
+├── storage/
+│   └── app/
+│       ├── public/
+│       │   └── documents/       # Lưu tài liệu đã upload
+│       └── tmp/                 # Lưu file tạm (sẽ tự xóa)
+├── public/                      # Entry point & assets công khai
+└── .env                         # Cấu hình môi trường (KHÔNG đẩy lên GitHub)
+```
+
+## ⚙️ Hướng dẫn cài đặt và chạy dự án
+
+### Yêu cầu:
+- PHP 8.1+
+- Composer
+- MySQL
+- Laravel CLI
+
+### Các bước cài đặt:
+
+```bash
+# Clone dự án
+git clone https://github.com/thylh/project-web-laravel.git
+cd project-web-laravel
+
+# Cài thư viện PHP
+composer install
+
+# Tạo file môi trường
+cp .env.example .env
+
+# Tạo key và migrate database
+php artisan key:generate
+php artisan migrate
+
+# Tạo seeder (Tài khoản Admin)
+php artisan db:seed
+
+# Tạo folder lưu data
+/storage/app/public/documents/ --Folder lưu data chính
+/storage/app/tmp/ --Folder lưu data tạm
+php artisan storage:link
+
+# Chạy ứng dụng
+php artisan serve
+
