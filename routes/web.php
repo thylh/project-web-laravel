@@ -143,12 +143,12 @@ Route::get('/Lop12/Bai1', function () {
 
 //Phần Login-res-out-change
 Route::get('/dangnhap', [AuthController::class, 'showLogin'])->name('login');
-Route::post('/dangnhap', [AuthController::class, 'login']);
+Route::post('/dangnhap', [AuthController::class, 'login'])->middleware('throttle:5,1');;
 
 Route::get('/dangky', [AuthController::class, 'showRegister'])->name('register');
 Route::post('/dangky', [AuthController::class, 'register']);
 
-Route::post('/dangxuat', [AuthController::class, 'logout'])->name('logout');
+Route::post('/dangxuat', [AuthController::class, 'logout'])->name('logout')->middleware('auth');;
 
 Route::get('/doimatkhau', [AuthController::class, 'showChangePasswordForm'])->name('password.form')->middleware('auth');
 Route::post('/doimatkhau', [AuthController::class, 'changePassword'])->name('password.change')->middleware('auth');
@@ -162,51 +162,43 @@ Route::get('/gioithieu', function () {
 use App\Http\Controllers\DocumentController;
 
 Route::get('/Document', [DocumentController::class, 'index'])->name('documents.index');
-Route::get('/document/view/{id}', [DocumentController::class, 'view'])->name('document.view');
+Route::get('/document/view/{id}', [DocumentController::class, 'view'])->middleware('auth')->name('document.view');
 // Route::get('/Document', function () {
 //     return view('Tailieu-Dethi.document');
 // });
 Route::get('/search', [DocumentController::class, 'search'])->name('documents.search');
-Route::get('/documents/{id}', [DocumentController::class, 'show'])->name('documents.show');
 
 //Upload
-Route::get('/upload1', function () {
-    return view('upload.B1');
-})->name('upload');
-
-// User profile
-Route::get('/user/profile', [AuthController::class, 'profile'])->name('user.profile');
-
-use App\Http\Middleware\Authenticate; // Middleware auth gốc
-
-Route::middleware(Authenticate::class)->group(function () {
+Route::middleware('auth')->group(function () {
     Route::prefix('upload')->group(function () {
         Route::get('/', [UploadController::class, 'step1'])->name('upload.step1');
         Route::post('/', [UploadController::class, 'postStep2'])->name('upload.step2.post');
         Route::get('/info', [UploadController::class, 'step2'])->name('upload.step2');
         Route::post('/info', [UploadController::class, 'postStep3'])->name('upload.step3');
-        Route::get('/done', function () {
-            return view('upload.step3');
-        })->name('upload.done');
     });
 });
 
-//viewAdmin
+
 use App\Http\Controllers\Admin\DocumentReviewController;
 use App\Http\Controllers\Admin\DashboardController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Middleware\CheckRole;
 
-Route::get('/admin/dashboard', [DashboardController::class, 'home'])->name('admin.dashboard.home');
-Route::get('/admin/documents', [DocumentReviewController::class, 'index'])->name('admin.document.index');
+// User profile
+Route::middleware(CheckRole::class . ':user')->group(function () {
+    Route::get('/user/profile', [AuthController::class, 'profile']);
+});
 
-Route::post('/admin/dashboard/documents/{id}/approve', [DocumentReviewController::class, 'approve'])->name('admin.dashboard.approve');
-Route::post('/admin/dashboard/documents/{id}/reject', [DocumentReviewController::class, 'reject'])->name('admin.dashboard.reject');
-
-Route::get('/admin/users', [DashboardController::class, 'index'])->name('admin.users.index');
-Route::delete('/admin/users/{id}', [DashboardController::class, 'destroy'])->name('admin.users.destroy');
+//viewAdmin
+Route::middleware([CheckRole::class . ':admin'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'home'])->name('admin.dashboard.home');
+    Route::get('/admin/documents', [DocumentReviewController::class, 'index'])->name('admin.document.index');
+    Route::post('/dashboard/documents/{id}/approve', [DocumentReviewController::class, 'approve'])->name('admin.dashboard.approve');
+    Route::post('/dashboard/documents/{id}/reject', [DocumentReviewController::class, 'reject'])->name('admin.dashboard.reject');
+    Route::get('/users', [DashboardController::class, 'index'])->name('admin.users.index');
+    Route::delete('/users/{id}', [DashboardController::class, 'destroy'])->name('admin.users.destroy');
+});
 
 Route::get('/redirect-admin', function () {
     return view('admin.redirect-admin');
 });
-
 

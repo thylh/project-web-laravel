@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use App\Http\Middleware\ForcePasswordChange;
 
 class AuthController extends Controller
 {
@@ -93,11 +92,6 @@ class AuthController extends Controller
     public function profile()
     {
         $user = Auth::user();
-
-        if (!$user || $user->role !== 'user') {
-            abort(403);
-        }
-
         $documentCount = $user->documents()->count();
 
         return view('in_out.info', compact('user', 'documentCount'));

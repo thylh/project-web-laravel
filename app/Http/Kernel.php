@@ -44,7 +44,7 @@ class Kernel extends HttpKernel
         'auth'       => \App\Http\Middleware\Authenticate::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'verified'   => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        // 'role'       => \App\Http\Middleware\CheckRole::class, // thêm dòng này để sử dụng role middleware
+        'role'       => \App\Http\Middleware\CheckRole::class,
         // 'test' => \App\Http\Middleware\TestHello::class,
     ];
 }

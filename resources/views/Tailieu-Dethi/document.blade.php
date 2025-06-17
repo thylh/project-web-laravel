@@ -39,9 +39,15 @@
                             </div>
                             <div class="buttons">
                                 <a href="{{ route('document.view', $doc->id) }}" class="read">Đọc online</a>
-                                <a href="{{ asset('storage/' . $doc->file_path) }}" class="down download-btn" data-id="{{ $doc->id }}" download>
-                                    <img src="{{ asset('/images/pic/Import_light.svg') }}" alt="">
-                                </a>
+                                @auth
+                                    <a href="{{ asset('storage/' . $doc->file_path) }}" class="down download-btn" data-id="{{ $doc->id }}" download>
+                                        <img src="{{ asset('/images/pic/Import_light.svg') }}" alt="">
+                                    </a>
+                                @else
+                                    <a href="{{ route('document.view', $doc->id) }}" class="down download-btn">
+                                        <img src="{{ asset('/images/pic/Import_light.svg') }}" alt="">
+                                    </a>
+                                @endauth
                             </div>
                         </div>
                     @empty
