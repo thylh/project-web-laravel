@@ -62,7 +62,7 @@
                                 <script>
                                     function redirectAdmin() {
                                         window.open('{{ url('/admin/dashboard') }}', '_blank');
-                                        window.location.href = '{{ url('/trangchu') }}';
+                                        window.location.href = '{{ url('/') }}';
                                     }
                                 </script>
                                 @endif
@@ -78,7 +78,7 @@
             </div>
 
             <div class="navbar2">
-                <a href="{{ url('/trangchu') }}">
+                <a href="{{ url('/') }}">
                     <img src="{{ asset('images/capy.png') }}" alt="Logo" class="logo">
                 </a>
 

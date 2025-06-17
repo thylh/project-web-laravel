@@ -13,6 +13,21 @@
 
     {{-- Các file CSS khác nếu có --}}
     @stack('styles')
+    <style>
+        .chat-fixed {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #0084FF;
+          color: white;
+          padding: 12px 18px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+          z-index: 9999;
+        }
+      </style>
 </head>
 <body>
 
@@ -32,6 +47,8 @@
 
     {{-- Các file JS khác nếu có --}}
     @stack('scripts')
-    
+    <a href="https://m.me/722689647590237" target="_blank" class="chat-fixed">
+        💬 Message
+      </a>
 </body>
 </html>

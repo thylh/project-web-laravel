@@ -54,7 +54,7 @@ class AuthController extends Controller
                 return redirect()->intended();
             }
             
-            return redirect('/trangchu');
+            return redirect('/');
         }
 
         return back()->withErrors([
@@ -87,7 +87,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/trangchu');
+        return redirect('/');
     }
 
     public function profile()

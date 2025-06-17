@@ -7,9 +7,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UploadController;
 
 // Chỉ nên giữ 1 route cho "/"
-Route::get('/', function () {
-    return view('WELCOME');
-});
+// Route::get('/', function () {
+//     return view('WELCOME');
+// });
 
 // Các route test
 Route::get('/test-head', function () {
@@ -20,7 +20,7 @@ Route::get('/test-body', function () {
     return view('Trang_chu.body');
 });
 // Trang chủ sử dụng controller
-Route::get('/trangchu', [TrangChuController::class, 'index']);
+Route::get('/', [TrangChuController::class, 'index']);
 
 // Route cho lớp 10 (chỉ chọn 1 method)
 
