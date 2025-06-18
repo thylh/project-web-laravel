@@ -111,6 +111,14 @@
                     </li>
 
                     <li>
+                        <a href="{{ Route('admin.categories.index') }}">
+                            <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+                            <span class="title">Category</span>
+                        </a>
+
+                    </li>
+
+                    <li>
                         <a href="{{ route('admin.upload.create') }}">
                             <span class="icon">
                                 <ion-icon name="cloud-upload-outline"></ion-icon>

@@ -220,3 +220,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/upload', [AdminUploadController::class, 'create'])->name('admin.upload.create');
     Route::post('/upload', [AdminUploadController::class, 'store'])->name('admin.upload.store');
 });
+//danh muc 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+});

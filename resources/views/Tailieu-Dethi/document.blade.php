@@ -9,14 +9,7 @@
 @section('content')
     <main>
         <div class="container">
-            {{-- <div class="sidebar">
-                <h2>Danh mục</h2>
-                <ul>
-                    <li><a href="#">Lớp 10</a></li>
-                    <li><a href="#">Lớp 11</a></li>
-                    <li><a href="#">Lớp 12</a></li>
-                </ul>
-            </div> --}}
+            
             <div class="content">
                 <div class="content1"><h1>TÀI LIỆU - ĐỀ THI</h1></div>
                 <div class="content2">

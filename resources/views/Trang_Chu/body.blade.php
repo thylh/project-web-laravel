@@ -24,29 +24,32 @@
     </p>
 
     <br>
-<div style="display:flex">
-    <div class="body_2_1">
-        <p class="chu_2_1">
-                Chúng tôi – những sinh viên đồng hành xây dựng <span style="color:rgb(84, 84, 241); font-weight:bold;">CapybaraStudy</span> – luôn tin rằng nền tảng vững chắc cho thành công tương lai của học sinh được hình thành từ những kiến thức và kỹ năng mà Thầy Cô tận tâm truyền đạt trong suốt hành trình học tập.
-        </p>
 
-        <br><br>
 
-        <p class="chu_2_2">
-        <span style="font-family: Arial, Helvetica, sans-serif;">
-            Với tâm huyết đó, <span style="color:rgb(84, 84, 241); font-weight:bold;">CapybaraStudy</span> ra đời như một người bạn đồng hành đáng tin cậy, mang đến cho học sinh cấp 3 một phương pháp học tập toàn diện, hiệu quả và tràn đầy cảm hứng. Tại đây, các bạn sẽ được rèn luyện tư duy, phát triển kỹ năng và chuẩn bị một cách tự tin cho các kỳ thi quan trọng - tất cả trong một môi trường học tập thân thiện, thoải mái, không áp lực và luôn tràn đầy niềm vui khám phá.
-        </span></p>
-        <br> <br> 
-        <p class="chu_2_3">
-        <a  href="#">Xem thêm</a>
-        <span style="margin: 0 20px;"></span>
-        <a  href="#">Hướng dẫn cách học</a>
-        </p>
-    </div>
-    <div style="margin-left:80px; margin-top:-100px ">
+    <div style="display:flex">
+        <div class="body_2_1">
+            <p class="chu_2_1">
+                    Chúng tôi – những sinh viên đồng hành xây dựng <span style="color:rgb(84, 84, 241); font-weight:bold;">CapybaraStudy</span> – luôn tin rằng nền tảng vững chắc cho thành công tương lai của học sinh được hình thành từ những kiến thức và kỹ năng mà Thầy Cô tận tâm truyền đạt trong suốt hành trình học tập.
+            </p>
+
+            <br><br>
+
+            <p class="chu_2_2">
+            <span style="font-family: Arial, Helvetica, sans-serif;">
+                Với tâm huyết đó, <span style="color:rgb(84, 84, 241); font-weight:bold;">CapybaraStudy</span> ra đời như một người bạn đồng hành đáng tin cậy, mang đến cho học sinh cấp 3 một phương pháp học tập toàn diện, hiệu quả và tràn đầy cảm hứng. Tại đây, các bạn sẽ được rèn luyện tư duy, phát triển kỹ năng và chuẩn bị một cách tự tin cho các kỳ thi quan trọng - tất cả trong một môi trường học tập thân thiện, thoải mái, không áp lực và luôn tràn đầy niềm vui khám phá.
+            </span></p>
+            <br> <br> 
+            <p class="chu_2_3">
+            <a  href="#">Xem thêm</a>
+            <span style="margin: 0 20px;"></span>
+            <a  href="#">Hướng dẫn cách học</a>
+            </p>
+        </div>
+        <div style="margin-left:80px; margin-top:-100px ">
             <br>
             <iframe  width="500px" height="300px" src="https://www.youtube.com/embed/nZtFlrwCbs4" frameborder="0" allowfullscreen></iframe> </div>
-</div>
+        </div>
+    </div>
 </div>
     <br>
 <div class="body_3">

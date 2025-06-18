@@ -1,14 +1,14 @@
 @extends('admin.layout-admin')
 
 @section('content')
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Admin Upload Tài liệu</h2>
+<div class="container">
+    <h2>Admin Upload Tài liệu</h2>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
 
-    <form action="{{ route('admin.upload.store') }}" method="POST" enctype="multipart/form-data" class="shadow p-4 rounded bg-light">
+    <form action="{{ route('admin.upload.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Tiêu đề</label>
@@ -21,8 +21,19 @@
         </div>
 
         <div class="mb-3">
+            <label for="category_id" class="form-label">Danh mục</label>
+            <select name="category_id" class="form-control" required>
+                <option value="">-- Chọn danh mục --</option>
+                @foreach ($categories as $cat)
+                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                @endforeach
+            </select>
+        </div>
+        
+
+        <div class="mb-3">
             <label for="description" class="form-label">Mô tả (tuỳ chọn)</label>
-            <textarea name="description" class="form-control" rows="3"></textarea>
+            <textarea name="description" class="form-control"></textarea>
         </div>
 
         <div class="mb-3">
@@ -30,32 +41,7 @@
             <input type="file" name="file" class="form-control" required>
         </div>
 
-        <button type="submit" class="btn btn-primary w-100">Tải lên</button>
+        <button class="btn btn-primary">Tải lên</button>
     </form>
 </div>
-
-<style>
-    .container {
-        max-width: 600px;
-        margin: auto;
-    }
-    h2 {
-        color: #333;
-    }
-    .alert {
-        margin-bottom: 20px;
-    }
-    .form-control {
-        border-radius: 0.25rem;
-    }
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        border-radius: 0.25rem;
-    }
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
-</style>
 @endsection

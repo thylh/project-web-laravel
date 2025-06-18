@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class UploadController extends Controller
 {
     public function step1()
-    {
-        return view('upload.step1');
-    }
+{
+    $categories = \App\Models\Category::all();
+    return view('upload.step1', compact('categories'));
+}
 
     public function postStep2(Request $request)
     {
@@ -36,46 +37,62 @@ class UploadController extends Controller
         if (!session()->has('tmp_upload_path')) {
             return redirect()->route('upload.step1');
         }
-        return view('upload.step2');
+    
+        $categories = \App\Models\Category::all();
+        return view('upload.step2', compact('categories')); // ✅ TRUYỀN BIẾN
     }
 
     public function postStep3(Request $request)
     {
+        // ✅ Bước 1: Validate dữ liệu từ form
         $request->validate([
             'title' => 'required|string|max:255',
-            'type' => 'required|string',
-            'description' => 'nullable|string',
+            'type' => 'required|string|max:50',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'nullable|string|max:1000',
         ]);
-
+    
+        // ✅ Bước 2: Lấy đường dẫn file tạm từ session
         $tmpPath = session('tmp_upload_path');
         $originalName = session('original_file_name');
-
         $fullTmpPath = storage_path('app/' . $tmpPath);
-
+    
+        // ❌ Nếu không có file tạm hoặc bị mất → quay lại bước 1
         if (!$tmpPath || !file_exists($fullTmpPath)) {
-            logger('Không tìm thấy file tạm: ' . $fullTmpPath);
-            return redirect()->route('upload.step1')->with('error', 'Tệp tin không tồn tại, vui lòng thử lại');
+            logger()->error('Không tìm thấy file tạm: ' . $fullTmpPath);
+            return redirect()->route('upload.step1')->with('error', 'Tệp tin không tồn tại hoặc đã hết hạn. Vui lòng thử lại.');
         }
-        $publicDocumentsPath = storage_path('app/public/documents');
-        if (!file_exists($publicDocumentsPath)) {
-            mkdir($publicDocumentsPath, 0775, true);
+    
+        // ✅ Bước 3: Di chuyển file từ thư mục tạm → thư mục public/storage/documents
+        $publicDir = storage_path('app/public/documents');
+        if (!file_exists($publicDir)) {
+            mkdir($publicDir, 0775, true);
         }
-
+    
         $newPath = 'documents/' . basename($tmpPath);
         $destination = storage_path('app/public/' . $newPath);
         rename($fullTmpPath, $destination);
-
+    
+        // ✅ Bước 4: Lưu thông tin tài liệu vào DB
         $document = Document::create([
-            'title' => $request->title,
-            'type' => $request->type,
-            'description' => $request->description,
-            'file_path' => $newPath,
+            'title'         => $request->title,
+            'type'          => $request->type,
+            'description'   => $request->description,
+            'category_id'   => $request->category_id,
+            'file_path'     => $newPath,
             'original_name' => $originalName,
-            'user_id' => Auth::id(),
+            'user_id'       => Auth::id(),
+            'is_approved' => false,
         ]);
-
+    
+        // ✅ Bước 5: Xóa session sau khi upload thành công
         session()->forget(['tmp_upload_path', 'original_file_name']);
-
-        return view('upload.step3', ['file' => $newPath, 'data' => $document]);
+    
+        // ✅ Bước 6: Chuyển sang bước hoàn tất, hiển thị lại thông tin
+        return view('upload.step3', [
+            'file' => $newPath,
+            'data' => $document
+        ]);
     }
+    
 }
