@@ -142,8 +142,8 @@ project-web-laravel/
 
 ```bash
 # Clone dự án
-git clone https://github.com/thylh/project-web-laravel.git
-cd project-web-laravel
+git clone https://github.com/nguyenquangtho/ktmp.git
+cd ktpm
 
 # Cài thư viện PHP
 composer install
