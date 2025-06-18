@@ -196,6 +196,8 @@ Route::middleware([CheckRole::class . ':admin'])->group(function () {
     Route::post('/dashboard/documents/{id}/reject', [DocumentReviewController::class, 'reject'])->name('admin.dashboard.reject');
     Route::get('/users', [DashboardController::class, 'index'])->name('admin.users.index');
     Route::delete('/users/{id}', [DashboardController::class, 'destroy'])->name('admin.users.destroy');
+    Route::get('/admin/documents/approved', [DocumentReviewController::class, 'approved'])->name('admin.documents.approved');
+    Route::delete('/admin/documents/{id}', [DocumentReviewController::class, 'destroy'])->name('admin.document.destroy');
 });
 
 Route::get('/redirect-admin', function () {

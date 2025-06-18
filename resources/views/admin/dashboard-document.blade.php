@@ -85,7 +85,13 @@
                             {{ $doc->created_at ? $doc->created_at->format('d/m/Y') : '' }}
                         </td>
                         <td>{{ $doc->type }}</td>
-                        <td class="desc-cell" title="{{ $doc->description }}">{{ $doc->description }}</td>
+                        <td class="desc-cell" title="{{ $doc->description }}">
+                            @if ($doc->description)
+                                <span>{{ $doc->description }}</span>
+                            @else
+                                <span style="color: #aaa;">Chưa có</span>
+                            @endif
+                        </td>
                         <td>
                             <a href="{{ asset('storage/' . $doc->file_path) }}" target="_blank">Xem</a>
                             <br>
