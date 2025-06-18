@@ -16,7 +16,7 @@ class DocumentReviewController extends Controller
             abort(403, 'Bạn không có quyền truy cập.');
         }
 
-        $documents = Document::where('is_approved', false)->get();
+        $documents = Document::where('is_approved', false)->get();;
         return view('admin.dashboard-document', compact('documents'));
     }
 
@@ -45,4 +45,33 @@ class DocumentReviewController extends Controller
         $document->delete();
         return redirect()->back()->with('error', 'Tài liệu đã bị từ chối và xoá.');
     }
+    public function approved()
+   {
+    if (!Auth::check() || Auth::user()->role !== 'admin') {
+        abort(403);
+    }
+
+    $documents = Document::where('is_approved', true)->get();
+
+    return view('admin.documents-approved', compact('documents'));
+   }
+   public function destroy($id)
+{
+    if (!Auth::check() || Auth::user()->role !== 'admin') {
+        abort(403);
+    }
+
+    $document = Document::findOrFail($id);
+
+    // Xoá file thực nếu tồn tại
+    if ($document->file_path && Storage::disk('public')->exists($document->file_path)) {
+        Storage::disk('public')->delete($document->file_path);
+    }
+
+    $document->delete();
+
+    return redirect()->back()->with('success', 'Tài liệu đã xoá thành công.');
+}
+
+
 }

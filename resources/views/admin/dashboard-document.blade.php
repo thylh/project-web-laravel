@@ -141,5 +141,14 @@
             </tbody>
         </table>
     @endif
+    <hr>
+    <hr>
+    <li>
+        <a href="{{ route('admin.documents.approved') }}">
+            <span class="icon"><ion-icon name="checkmark-done-outline"></ion-icon></span>
+            <span class="title">Tài liệu đã duyệt</span>
+        </a>
+    </li>
+    
 </div>
 @endsection

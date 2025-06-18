@@ -12,7 +12,7 @@ class DocumentController extends Controller
 {
     public function index()
     {
-        $documents = Document::where('is_approved', true)->latest()->get();
+        $documents = Document::where('is_approved', true)->orderByDesc('id')->paginate(6);
         return view('Tailieu-Dethi.document', compact('documents'));
     }
     public function view($id)

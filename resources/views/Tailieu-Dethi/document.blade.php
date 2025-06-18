@@ -49,7 +49,8 @@
                     @endforelse
                 </div>
 
-                <div id="pagination"></div>
+                {{ $documents->links('vendors.pagination.custom') }}
+
             </div>
             
         </div>
@@ -58,57 +59,57 @@
         
 
         // Pagination script
-        const pagination = document.getElementById("pagination");
-        const totalPages = 10;
-        let currentPage = 1;
+    //     const pagination = document.getElementById("pagination");
+    //     const totalPages = 10;
+    //     let currentPage = 1;
 
-        function createPagination(currentPage) {
-        pagination.innerHTML = '';
-        pagination.className = "pagination";
+    //     function createPagination(currentPage) {
+    //     pagination.innerHTML = '';
+    //     pagination.className = "pagination";
 
-        const createPageItem = (text, isActive = false, isEllipsis = false) => {
-            const span = document.createElement("div");
-            span.className = "page-item";
-            span.innerText = text;
-            if (isActive) span.classList.add("active");
-            if (!isEllipsis) {
-            span.addEventListener("click", () => {
-                if (text === '←') {
-                if (currentPage > 1) createPagination(--currentPage);
-                } else if (text === '→') {
-                if (currentPage < totalPages) createPagination(++currentPage);
-                } else {
-                createPagination(+text);
-                }
-            });
-            }
-            return span;
-        };
+    //     const createPageItem = (text, isActive = false, isEllipsis = false) => {
+    //         const span = document.createElement("div");
+    //         span.className = "page-item";
+    //         span.innerText = text;
+    //         if (isActive) span.classList.add("active");
+    //         if (!isEllipsis) {
+    //         span.addEventListener("click", () => {
+    //             if (text === '←') {
+    //             if (currentPage > 1) createPagination(--currentPage);
+    //             } else if (text === '→') {
+    //             if (currentPage < totalPages) createPagination(++currentPage);
+    //             } else {
+    //             createPagination(+text);
+    //             }
+    //         });
+    //         }
+    //         return span;
+    //     };
 
-        pagination.appendChild(createPageItem('←'));
+    //     pagination.appendChild(createPageItem('←'));
 
-        if (currentPage > 3) {
-            pagination.appendChild(createPageItem('1'));
-            pagination.appendChild(createPageItem('...', false, true));
-        }
-
-
-        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-            if (i >= 1 && i <= totalPages) {
-                pagination.appendChild(createPageItem(i, currentPage === i));
-            }
-        }
+    //     if (currentPage > 3) {
+    //         pagination.appendChild(createPageItem('1'));
+    //         pagination.appendChild(createPageItem('...', false, true));
+    //     }
 
 
-        if (currentPage < totalPages - 1) {
-            if (currentPage < totalPages - 2) pagination.appendChild(createPageItem('...', false, true));
-            pagination.appendChild(createPageItem(totalPages, currentPage === totalPages));
-        }
+    //     for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+    //         if (i >= 1 && i <= totalPages) {
+    //             pagination.appendChild(createPageItem(i, currentPage === i));
+    //         }
+    //     }
 
-        pagination.appendChild(createPageItem('→'));
-        }
 
-        createPagination(currentPage);
+    //     if (currentPage < totalPages - 1) {
+    //         if (currentPage < totalPages - 2) pagination.appendChild(createPageItem('...', false, true));
+    //         pagination.appendChild(createPageItem(totalPages, currentPage === totalPages));
+    //     }
+
+    //     pagination.appendChild(createPageItem('→'));
+    //     }
+
+    //     createPagination(currentPage);
     </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

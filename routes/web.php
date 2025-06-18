@@ -198,6 +198,9 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 Route::get('/admin/dashboard', [DashboardController::class, 'home'])->name('admin.dashboard.home');
 Route::get('/admin/documents', [DocumentReviewController::class, 'index'])->name('admin.document.index');
+Route::get('/admin/documents/approved', [DocumentReviewController::class, 'approved'])->name('admin.documents.approved');
+Route::delete('/admin/documents/{id}', [DocumentReviewController::class, 'destroy'])->name('admin.document.destroy');
+
 
 Route::post('/admin/dashboard/documents/{id}/approve', [DocumentReviewController::class, 'approve'])->name('admin.dashboard.approve');
 Route::post('/admin/dashboard/documents/{id}/reject', [DocumentReviewController::class, 'reject'])->name('admin.dashboard.reject');
@@ -210,3 +213,10 @@ Route::get('/redirect-admin', function () {
 });
 
 
+// upload file admin
+use App\Http\Controllers\Admin\AdminUploadController;
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/upload', [AdminUploadController::class, 'create'])->name('admin.upload.create');
+    Route::post('/upload', [AdminUploadController::class, 'store'])->name('admin.upload.store');
+});

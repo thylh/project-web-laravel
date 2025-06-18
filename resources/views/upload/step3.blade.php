@@ -22,6 +22,6 @@
     </div>
 
     <a href="{{ route('upload.step1') }}"><button type="submit">Tải lên thêm tập tin</button></a>
-    <a href="{{ url('/trangchu') }}"><button type="submit">Về trang chủ</button></a>
+    <a href="{{ url('/') }}"><button type="submit">Về trang chủ</button></a>
 </div>
 @endsection
