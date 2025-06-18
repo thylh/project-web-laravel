@@ -107,6 +107,38 @@
                             <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
                             <span class="title">User</span>
                         </a>
+
+                    </li>
+
+                    <li>
+                        <a href="{{ Route('admin.categories.index') }}">
+                            <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+                            <span class="title">Category</span>
+                        </a>
+
+                    </li>
+
+                    <li>
+                        <a href="{{ route('admin.upload.create') }}">
+                            <span class="icon">
+                                <ion-icon name="cloud-upload-outline"></ion-icon>
+                            </span>
+                            <span class="title">Upload</span>
+                        </a>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span class="icon"><ion-icon name="exit-outline"></ion-icon></span>
+                            <span class="title">Logout</span>
+                        </a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        
+                        
                     </li>
                 </ul>
             </div>

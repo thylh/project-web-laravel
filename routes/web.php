@@ -7,9 +7,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UploadController;
 
 // Chỉ nên giữ 1 route cho "/"
-Route::get('/', function () {
-    return view('WELCOME');
-});
+// Route::get('/', function () {
+//     return view('WELCOME');
+// });
 
 // Các route test
 Route::get('/test-head', function () {
@@ -20,7 +20,7 @@ Route::get('/test-body', function () {
     return view('Trang_chu.body');
 });
 // Trang chủ sử dụng controller
-Route::get('/trangchu', [TrangChuController::class, 'index']);
+Route::get('/', [TrangChuController::class, 'index']);
 
 // Route cho lớp 10 (chỉ chọn 1 method)
 
@@ -202,3 +202,14 @@ Route::get('/redirect-admin', function () {
     return view('admin.redirect-admin');
 });
 
+// upload file admin
+use App\Http\Controllers\Admin\AdminUploadController;
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/upload', [AdminUploadController::class, 'create'])->name('admin.upload.create');
+    Route::post('/upload', [AdminUploadController::class, 'store'])->name('admin.upload.store');
+});
+//danh muc 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
+});

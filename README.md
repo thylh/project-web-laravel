@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 Dự án Chia sẻ Tài liệu Học tập - Laravel
 
 Đây là một ứng dụng web được xây dựng bằng **Laravel**, nhằm hỗ trợ sinh viên và giảng viên đăng tải, tìm kiếm và chia sẻ tài liệu học tập dễ dàng. Hệ thống phân quyền người dùng rõ ràng với chức năng duyệt tài liệu trước khi công khai.
@@ -141,8 +142,8 @@ project-web-laravel/
 
 ```bash
 # Clone dự án
-git clone https://github.com/thylh/project-web-laravel.git
-cd project-web-laravel
+git clone https://github.com/nguyenquangtho/ktmp.git
+cd ktpm
 
 # Cài thư viện PHP
 composer install
@@ -165,3 +166,7 @@ php artisan storage:link
 # Chạy ứng dụng
 php artisan serve
 
+=======
+# ktpm
+prọject
+>>>>>>> 08c7dcfe8faced6f4b19c8aef1c967c5495e508a

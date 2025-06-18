@@ -43,6 +43,17 @@
         </label>
         <div style="display: flex; justify-content: space-between;">
             <a href="{{ route('upload.step1') }}"><button type="button">Quay lại</button></a>
+            <label>
+                Chọn danh mục:
+                <select name="category_id" required>
+                    <option value="">-- Chọn danh mục --</option>
+                    @foreach ($categories as $cat)
+                        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                    @endforeach
+                </select>
+                
+            </label>
+            
             <button type="submit">Hoàn thành</button>
         </div>
     </form>

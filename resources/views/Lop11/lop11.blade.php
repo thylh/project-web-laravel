@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
     <link rel="stylesheet" href="{{ asset('css/lop10.css') }}">
+    <style>
+        .chat-fixed {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background-color: #0084FF;
+          color: white;
+          padding: 12px 18px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+          z-index: 9999;
+        }
+      </style>
 </head>
 <body>
     @include('Trang_Chu.header')
@@ -41,6 +56,8 @@
         </div>
     </div>
         @include('Trang_Chu.footer')
-
+        <a href="https://m.me/722689647590237" target="_blank" class="chat-fixed">
+            💬 Message
+          </a>
 </body>
 </html>

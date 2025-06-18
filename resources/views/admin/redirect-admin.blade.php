@@ -6,7 +6,7 @@
     <script>
         window.onload = function () {
             window.open('/admin/dashboard', '_blank');
-            window.location.href = '/trangchu';
+            window.location.href = '/';
         };
     </script>
 </head>
